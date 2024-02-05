@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const cors = require("cors");
-const {}=require("socket.io")
+const {Server}=require("socket.io")
 
 app.use(cors());
 const server =http.createServer(app);
 
-const io = new server(server, {
+const io = new Server(server, {
     cors: {
         origon: " htttp://localhost:3000",
         method: ["GET","POST"]
