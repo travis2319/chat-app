@@ -1,7 +1,29 @@
 const express = require("express");
-
 const app = express();
+const http = require("http");
+const cors = require("cors");
+const {}=require("socket.io")
 
-app.listen(3000,()=>{
-    console.log("server listing on port 3000 http://localhost:3000");
+app.use(cors());
+const server =http.createServer(app);
+
+const io = new server(server, {
+    cors: {
+        origon: " htttp://localhost:3000",
+        method: ["GET","POST"]
+    }
+});
+
+io.on("connection", ()=>{
+    console.log(socket.id);
+socket.on("disconnect",()=>
+{
+    console.log("User Disconnected",socket.id)
+});
+
+});
+
+server.listen(3001, () => {
+    console.timeLog("Server Running")
 })
+
