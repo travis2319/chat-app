@@ -9,19 +9,20 @@ const server =http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origon: " htttp://localhost:3000",
+        origon: " htttp://localhost:5173",
         method: ["GET","POST"]
     }
 });
 
 io.on("connection", (socket)=>{
-    console.log(socket.id);
+    console.log('User Connected: ${socket.id}');
+
     socket.on("disconnect",()=>{
     console.log("User Disconnected ${socket.id}")
     });
 });
 
-server.listen(3000, () => {
-    console.log("Server Running http://localhost:3000");
+server.listen(3001, () => {
+    console.log("Server Running http://localhost:3001");
 })
 
