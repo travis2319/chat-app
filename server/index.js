@@ -9,7 +9,7 @@ const server =http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origon: " htttp://localhost:5173",
+        origin: "http://localhost:3000/",
         method: ["GET","POST"]
     }
 });
